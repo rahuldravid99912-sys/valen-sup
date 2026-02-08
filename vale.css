@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Removes blue tap box on mobile */
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* Fix for mobile browser bars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    overflow: hidden; /* CRITICAL: Prevents scrollbars when button moves */
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+    /* Responsive Width Logic */
+    width: 90%; 
+    max-width: 400px;
+    z-index: 10;
+}
+
+h1 {
+    color: #d81159;
+    font-size: 1.8rem; /* Responsive font size */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.subtext {
+    font-size: 1rem;
+    color: #ff4d6d;
+    font-style: italic;
+    font-weight: 400;
+}
+
+#image-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    min-height: 60px; /* Reserves space for buttons */
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    white-space: nowrap; /* Stops text from wrapping */
+    transition: transform 0.2s ease;
+}
+
+#yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+    z-index: 20; /* Ensures Yes is always on top */
+}
+
+#no-btn {
+    background-color: #333;
+    color: white;
+    z-index: 100; /* High Z-index so it floats above everything */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Small screen adjustments */
+@media (max-width: 350px) {
+    h1 { font-size: 1.5rem; }
+    button { padding: 10px 20px; font-size: 1rem; }
+}
