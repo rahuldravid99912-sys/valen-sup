@@ -70,4 +70,5 @@ yesBtn.addEventListener("click", () => {
     
     // Show Image
     imageContainer.classList.remove("hidden");
+
 });
